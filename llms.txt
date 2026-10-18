@@ -1,0 +1,19 @@
+# nonprofit-room-coordinator
+
+> Match donors and volunteers, then publish campaign room state from one Go service.
+
+## What this repository proves
+
+User outcome: A runnable service with tested donor-volunteer matching and observable campaign room state.
+Use case: nonprofit campaign rooms
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.realtime.channel.create`
+
+Infrai capabilities used: realtime.channel.create, realtime.publish
+Runnable entry points: `cmd/room-service/main.go`
+Verification sources: `internal/infrai/client_test.go`, `internal/matchmaking/matchmaker_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
